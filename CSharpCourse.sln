@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{1B405F79-F012-4586-AA96-AF8DDB6B6961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoNetDemo", "AdoNetDemo\AdoNetDemo.csproj", "{BAD7C7BB-1667-4A34-AAC1-F40B019C8B85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B405F79-F012-4586-AA96-AF8DDB6B6961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B405F79-F012-4586-AA96-AF8DDB6B6961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B405F79-F012-4586-AA96-AF8DDB6B6961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B405F79-F012-4586-AA96-AF8DDB6B6961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD7C7BB-1667-4A34-AAC1-F40B019C8B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD7C7BB-1667-4A34-AAC1-F40B019C8B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD7C7BB-1667-4A34-AAC1-F40B019C8B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD7C7BB-1667-4A34-AAC1-F40B019C8B85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5431883-6215-4807-A7FF-5258FE93160D}
+	EndGlobalSection
+EndGlobal
