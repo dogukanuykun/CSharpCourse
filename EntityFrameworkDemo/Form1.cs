@@ -39,5 +39,36 @@ namespace EntityFrameworkDemo
             LoadProducts();
             MessageBox.Show("Product added!");
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            _productDal.Update(new Product
+            {
+                Id = Convert.ToInt32(dgwProducts.CurrentRow.Cells[0].Value),
+                Name = tbxNameUpdate.Text,
+                StockAmount = Convert.ToInt32(tbxStockAmountUpdate.Text),
+                UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text)
+
+            });
+            LoadProducts() ;
+            MessageBox.Show("Updated");
+        }
+
+        private void dgwProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbxNameUpdate.Text = dgwProducts.CurrentRow.Cells[1].Value.ToString();
+            tbxUnitPriceUpdate.Text = dgwProducts.CurrentRow.Cells[2].Value.ToString();
+            tbxStockAmountUpdate.Text = dgwProducts.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            _productDal.Delete(new Product
+            {
+                Id = Convert.ToInt32(dgwProducts.CurrentRow.Cells[0].Value)
+            });
+            LoadProducts();
+            MessageBox.Show("Deleted.");
+        }
     }
 }
