@@ -16,5 +16,28 @@ namespace EntityFrameworkDemo
         {
             InitializeComponent();
         }
+        ProductDal _productDal = new ProductDal();
+
+        private void LoadProducts()
+        {
+            dgwProducts.DataSource = _productDal.GetAll();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoadProducts();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            _productDal.Add(new Product
+            {
+                Name = tbxName.Text,
+                UnitPrice = Convert.ToDecimal(tbxUnitPrice.Text),
+                StockAmount = Convert.ToInt32(tbxStockAmount.Text)
+            });
+            LoadProducts();
+            MessageBox.Show("Product added!");
+        }
     }
 }

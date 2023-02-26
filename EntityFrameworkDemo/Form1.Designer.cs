@@ -157,6 +157,7 @@
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblName
             // 
@@ -226,6 +227,7 @@
             this.Controls.Add(this.dgwProducts);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxUpdate.ResumeLayout(false);
             this.gbxUpdate.PerformLayout();
             this.gbxAdd.ResumeLayout(false);
