@@ -19,6 +19,14 @@ namespace EntityFrameworkDemo
             }
         }
 
+        public List<Product> GetByName(string key)
+        {
+            using (ETradeContext context = new ETradeContext())
+            {
+                return context.Products.Where(p => p.Name.Contains(key)).ToList();
+            }
+        }
+
         public void Add(Product product)
         {
             using (ETradeContext context = new ETradeContext())
