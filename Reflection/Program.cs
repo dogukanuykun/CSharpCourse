@@ -24,6 +24,25 @@ namespace Reflection
 
             Console.WriteLine(methodInfo.Invoke(instance, null));
 
+            Console.WriteLine("------------------");
+
+            var methods = type.GetMethods();
+
+            foreach ( var method in methods )
+            {
+                Console.WriteLine("Method name: {0}",method.Name);
+                foreach (var variable in method.GetParameters())
+                {
+                    Console.WriteLine("     Parameter: {0}", variable.Name);
+                }
+
+                foreach (var attribute in method.GetCustomAttributes())
+                {
+                    Console.WriteLine("     Attribute: {0}", attribute.GetType().Name);
+                }
+
+            }
+
             Console.ReadLine();
             
         }
@@ -55,6 +74,7 @@ namespace Reflection
             return _num1 + _num2;
         }
 
+        [MethodName("Carpma")]
         public int Multiply2()
         {
             return _num1 * _num2;
@@ -62,6 +82,17 @@ namespace Reflection
 
 
 
+    }
+
+
+    public class MethodNameAttribute : Attribute
+    {
+        private string _name;
+
+        public MethodNameAttribute(string name)
+        {
+            this._name = name;
+        }
     }
 
 }
