@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,14 +16,20 @@ namespace Reflection
             //Console.WriteLine(dortIslem.Topla(3, 2));
             var type = typeof(Calc);
 
-            Calc calc = (Calc)Activator.CreateInstance(type, 2 ,3);
-            Console.WriteLine(calc.Sum(3,5));
+            //Calc calc = (Calc)Activator.CreateInstance(type, 2 ,3);
+            //Console.WriteLine(calc.Sum(3,5));
+
+            var instance = (Calc)Activator.CreateInstance(type, 2, 3);
+            MethodInfo methodInfo = instance.GetType().GetMethod("Sum2");
+
+            Console.WriteLine(methodInfo.Invoke(instance, null));
+
             Console.ReadLine();
             
         }
     }
 
-    public class Calc
+    public class Calc 
     {
 
         private int _num1, _num2;
